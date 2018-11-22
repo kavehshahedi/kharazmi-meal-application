@@ -57,6 +57,7 @@ import top.wefor.circularanim.CircularAnim;
 
 public class SplashActivity extends AppCompatActivity {
 
+    //A Comment To Check Git
 
     public static WebView webView;
 
