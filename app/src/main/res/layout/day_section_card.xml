@@ -1,0 +1,473 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.v7.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:fancy="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/dayCardView"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_margin="5dp"
+    app:cardBackgroundColor="#F1F1F1"
+    app:cardCornerRadius="5dp"
+    app:cardElevation="7dp">
+
+    <android.support.constraint.ConstraintLayout
+        android:id="@+id/dayLayoutConstraint"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+
+        <android.support.v7.widget.AppCompatTextView
+            android:id="@+id/dayNameTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="10dp"
+            android:layout_marginTop="10dp"
+            android:text="شنبه"
+            android:textAlignment="textEnd"
+            android:textColor="#212121"
+            android:textSize="22sp"
+            android:typeface="normal"
+            app:autoSizeMaxTextSize="22sp"
+            app:autoSizeMinTextSize="18sp"
+            app:autoSizeStepGranularity="2sp"
+            app:fontFamily="@font/isbold"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:textAllCaps="false" />
+
+        <android.support.v7.widget.AppCompatTextView
+            android:id="@+id/dayDateTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="10dp"
+            android:layout_marginTop="12dp"
+            android:text="1397/06/24"
+            android:textAlignment="viewStart"
+            android:textColor="#212121"
+            android:textSize="18sp"
+            android:typeface="normal"
+            app:autoSizeMaxTextSize="18sp"
+            app:autoSizeMinTextSize="14sp"
+            app:autoSizeStepGranularity="2sp"
+            app:fontFamily="@font/isbold"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:textAllCaps="false" />
+
+        <android.support.constraint.ConstraintLayout
+            android:id="@+id/breakfastLayout"
+            android:layout_width="90dp"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="15dp"
+            android:layout_marginEnd="15dp"
+            android:layout_marginTop="20dp"
+            android:minHeight="125dp"
+            android:minWidth="90dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/dayNameTextView">
+
+            <android.support.v7.widget.CardView
+                android:id="@+id/breakfastCardView"
+                android:layout_width="0dp"
+                android:layout_height="80sp"
+                android:layout_marginEnd="5dp"
+                android:layout_marginStart="5dp"
+                android:layout_marginTop="5dp"
+                app:cardBackgroundColor="#FFFFFF"
+                app:cardCornerRadius="4dp"
+                app:cardElevation="4dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent">
+
+                <android.support.constraint.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <ImageView
+                        android:id="@+id/bfImageView"
+                        android:layout_width="wrap_content"
+                        android:layout_height="44dp"
+                        android:layout_marginBottom="10dp"
+                        android:layout_marginEnd="10dp"
+                        android:layout_marginStart="10dp"
+                        android:layout_marginTop="5dp"
+                        android:scaleType="centerInside"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/bfTextView"
+                        app:srcCompat="@drawable/ic_breakfast" />
+
+                    <android.support.v7.widget.AppCompatTextView
+                        android:id="@+id/bfTextView"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginEnd="18dp"
+                        android:layout_marginStart="18dp"
+                        android:layout_marginTop="6dp"
+                        android:text="صبحانه"
+                        android:textAlignment="center"
+                        android:textColor="#404040"
+                        android:textSize="12sp"
+                        android:typeface="normal"
+                        app:autoSizeMaxTextSize="12sp"
+                        app:autoSizeMinTextSize="8sp"
+                        app:autoSizeStepGranularity="2sp"
+                        app:fontFamily="@font/isbold"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:textAllCaps="false" />
+
+                </android.support.constraint.ConstraintLayout>
+            </android.support.v7.widget.CardView>
+
+            <mehdi.sakout.fancybuttons.FancyButton
+                android:id="@+id/breakfastSelectButton"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:layout_marginBottom="4dp"
+                android:layout_marginEnd="5dp"
+                android:layout_marginStart="5dp"
+                android:layout_marginTop="12dp"
+                android:visibility="visible"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/breakfastCardView"
+                fancy:fb_borderWidth="1dp"
+                fancy:fb_defaultColor="#34ad21"
+                fancy:fb_radius="30dp"
+                fancy:fb_text="">
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
+                    <android.support.v7.widget.AppCompatTextView
+                        android:id="@+id/breakfastButtonTextView"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerInParent="true"
+                        android:fontFamily="@font/isbold"
+                        android:lines="1"
+                        android:maxLines="1"
+                        android:text="انتخاب"
+                        android:textAlignment="center"
+                        android:textColor="@android:color/white"
+                        android:textSize="12sp"
+                        app:autoSizeMaxTextSize="12sp"
+                        app:autoSizeMinTextSize="8sp"
+                        app:autoSizeStepGranularity="1sp"
+                        app:autoSizeTextType="uniform" />
+                </RelativeLayout>
+
+            </mehdi.sakout.fancybuttons.FancyButton>
+
+            <android.support.v7.widget.AppCompatTextView
+                android:id="@+id/breakfastTextView"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:layout_marginBottom="1dp"
+                android:layout_marginEnd="5dp"
+                android:layout_marginStart="5dp"
+                android:layout_marginTop="6dp"
+                android:fontFamily="@font/isbold"
+                android:lines="2"
+                android:text="چای + نان + پنیر + گردو"
+                android:textAlignment="center"
+                android:textColor="#353535"
+                android:textSize="14sp"
+                android:visibility="invisible"
+                app:autoSizeMaxTextSize="14sp"
+                app:autoSizeMinTextSize="10sp"
+                app:autoSizeStepGranularity="2sp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/breakfastCardView" />
+
+        </android.support.constraint.ConstraintLayout>
+
+        <android.support.constraint.ConstraintLayout
+            android:id="@+id/lunchLayout"
+            android:layout_width="90dp"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="15dp"
+            android:layout_marginEnd="8dp"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="20dp"
+            android:minHeight="125dp"
+            android:minWidth="90dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@+id/breakfastLayout"
+            app:layout_constraintStart_toEndOf="@+id/dinnerLayout"
+            app:layout_constraintTop_toBottomOf="@+id/dayNameTextView">
+
+            <android.support.v7.widget.CardView
+                android:id="@+id/lunchCardView"
+                android:layout_width="0dp"
+                android:layout_height="80sp"
+                android:layout_marginEnd="5dp"
+                android:layout_marginStart="5dp"
+                android:layout_marginTop="5dp"
+                app:cardBackgroundColor="#FFFFFF"
+                app:cardCornerRadius="4dp"
+                app:cardElevation="4dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent">
+
+                <android.support.constraint.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <ImageView
+                        android:id="@+id/lImageView"
+                        android:layout_width="wrap_content"
+                        android:layout_height="44dp"
+                        android:layout_marginBottom="10dp"
+                        android:layout_marginEnd="10dp"
+                        android:layout_marginStart="10dp"
+                        android:layout_marginTop="5dp"
+                        android:scaleType="centerInside"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/lTextView"
+                        app:srcCompat="@drawable/ic_lunch" />
+
+                    <android.support.v7.widget.AppCompatTextView
+                        android:id="@+id/lTextView"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginEnd="18dp"
+                        android:layout_marginStart="18dp"
+                        android:layout_marginTop="6dp"
+                        android:text="نهار"
+                        android:textAlignment="center"
+                        android:textColor="#404040"
+                        android:textSize="12sp"
+                        android:typeface="normal"
+                        app:autoSizeMaxTextSize="12sp"
+                        app:autoSizeMinTextSize="8sp"
+                        app:autoSizeStepGranularity="2sp"
+                        app:fontFamily="@font/isbold"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:textAllCaps="false" />
+
+                </android.support.constraint.ConstraintLayout>
+            </android.support.v7.widget.CardView>
+
+            <mehdi.sakout.fancybuttons.FancyButton
+                android:id="@+id/lunchSelectButton"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:layout_marginBottom="4dp"
+                android:layout_marginEnd="5dp"
+                android:layout_marginStart="5dp"
+                android:layout_marginTop="12dp"
+                android:visibility="visible"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/lunchCardView"
+                fancy:fb_borderWidth="1dp"
+                fancy:fb_defaultColor="#F5C000"
+                fancy:fb_radius="30dp"
+                fancy:fb_text="">
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
+                    <android.support.v7.widget.AppCompatTextView
+                        android:id="@+id/lunchButtonTextView"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerInParent="true"
+                        android:fontFamily="@font/isbold"
+                        android:lines="1"
+                        android:maxLines="1"
+                        android:text="انتخاب"
+                        android:textAlignment="center"
+                        android:textColor="@android:color/white"
+                        android:textSize="12sp"
+                        app:autoSizeMaxTextSize="12sp"
+                        app:autoSizeMinTextSize="8sp"
+                        app:autoSizeStepGranularity="1sp"
+                        app:autoSizeTextType="uniform" />
+                </RelativeLayout>
+
+            </mehdi.sakout.fancybuttons.FancyButton>
+
+            <android.support.v7.widget.AppCompatTextView
+                android:id="@+id/lunchTextView"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:layout_marginBottom="1dp"
+                android:layout_marginEnd="5dp"
+                android:layout_marginStart="5dp"
+                android:layout_marginTop="6dp"
+                android:fontFamily="@font/isbold"
+                android:lines="2"
+                android:text="چای + نان + پنیر + گردو"
+                android:textAlignment="center"
+                android:textColor="#353535"
+                android:textSize="14sp"
+                android:visibility="invisible"
+                app:autoSizeMaxTextSize="14sp"
+                app:autoSizeMinTextSize="10sp"
+                app:autoSizeStepGranularity="2sp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/lunchCardView" />
+
+        </android.support.constraint.ConstraintLayout>
+
+        <android.support.constraint.ConstraintLayout
+            android:id="@+id/dinnerLayout"
+            android:layout_width="90dp"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="15dp"
+            android:layout_marginStart="15dp"
+            android:layout_marginTop="20dp"
+            android:minHeight="125dp"
+            android:minWidth="90dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/dayNameTextView">
+
+            <android.support.v7.widget.CardView
+                android:id="@+id/dinnerCardView"
+                android:layout_width="0dp"
+                android:layout_height="80sp"
+                android:layout_marginEnd="5dp"
+                android:layout_marginStart="5dp"
+                android:layout_marginTop="5dp"
+                app:cardBackgroundColor="#FFFFFF"
+                app:cardCornerRadius="4dp"
+                app:cardElevation="4dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent">
+
+                <android.support.constraint.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <ImageView
+                        android:id="@+id/dImageView"
+                        android:layout_width="wrap_content"
+                        android:layout_height="44dp"
+                        android:layout_marginBottom="10dp"
+                        android:layout_marginEnd="10dp"
+                        android:layout_marginStart="10dp"
+                        android:layout_marginTop="5dp"
+                        android:scaleType="centerInside"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/dTextView"
+                        app:srcCompat="@drawable/ic_dinner" />
+
+                    <android.support.v7.widget.AppCompatTextView
+                        android:id="@+id/dTextView"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginEnd="18dp"
+                        android:layout_marginStart="18dp"
+                        android:layout_marginTop="6dp"
+                        android:text="شام"
+                        android:textAlignment="center"
+                        android:textColor="#404040"
+                        android:textSize="12sp"
+                        android:typeface="normal"
+                        app:autoSizeMaxTextSize="12sp"
+                        app:autoSizeMinTextSize="8sp"
+                        app:autoSizeStepGranularity="2sp"
+                        app:fontFamily="@font/isbold"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:textAllCaps="false" />
+
+                </android.support.constraint.ConstraintLayout>
+            </android.support.v7.widget.CardView>
+
+            <mehdi.sakout.fancybuttons.FancyButton
+                android:id="@+id/dinnerSelectButton"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:layout_marginBottom="4dp"
+                android:layout_marginEnd="5dp"
+                android:layout_marginStart="5dp"
+                android:layout_marginTop="12dp"
+                android:visibility="visible"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/dinnerCardView"
+                fancy:fb_borderWidth="1dp"
+                fancy:fb_defaultColor="#006DF0"
+                fancy:fb_radius="30dp"
+                fancy:fb_text="">
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
+                    <android.support.v7.widget.AppCompatTextView
+                        android:id="@+id/dinnerButtonTextView"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerInParent="true"
+                        android:fontFamily="@font/isbold"
+                        android:lines="1"
+                        android:maxLines="1"
+                        android:text="انتخاب"
+                        android:textAlignment="center"
+                        android:textColor="@android:color/white"
+                        android:textSize="12sp"
+                        app:autoSizeMaxTextSize="12sp"
+                        app:autoSizeMinTextSize="8sp"
+                        app:autoSizeStepGranularity="1sp"
+                        app:autoSizeTextType="uniform" />
+                </RelativeLayout>
+
+            </mehdi.sakout.fancybuttons.FancyButton>
+
+            <android.support.v7.widget.AppCompatTextView
+                android:id="@+id/dinnerTextView"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:layout_marginBottom="1dp"
+                android:layout_marginEnd="5dp"
+                android:layout_marginStart="5dp"
+                android:layout_marginTop="6dp"
+                android:fontFamily="@font/isbold"
+                android:lines="2"
+                android:text="چای + نان + پنیر + گردو"
+                android:textAlignment="center"
+                android:textColor="#353535"
+                android:textSize="14sp"
+                android:visibility="invisible"
+                app:autoSizeMaxTextSize="14sp"
+                app:autoSizeMinTextSize="10sp"
+                app:autoSizeStepGranularity="2sp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/dinnerCardView" />
+
+        </android.support.constraint.ConstraintLayout>
+
+    </android.support.constraint.ConstraintLayout>
+
+</android.support.v7.widget.CardView>

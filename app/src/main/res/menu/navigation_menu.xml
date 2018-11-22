@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:title="برنامه ها">
+
+        <menu>
+            <item android:id="@+id/currentWeekMenuOption"
+                android:title="هفته جاری"
+                android:icon="@drawable/ic_current_week"/>
+
+            <item android:id="@+id/nextWeekMenuOption"
+                android:title="هفته بعد"
+                android:icon="@drawable/ic_next_week"/>
+
+            <item android:id="@+id/foodScheduleMenuOption"
+                android:title="برنامه غذایی"
+                android:icon="@drawable/ic_food_schedule"/>
+        </menu>
+
+    </item>
+
+    <item android:id="@+id/walletMenuOption"
+        android:title="افزایش اعتبار"
+        android:icon="@drawable/ic_menu_wallet"/>
+
+    <item android:id="@+id/passwordMenuOption"
+        android:title="تغییر کلمه عبور"
+        android:icon="@drawable/ic_menu_password"/>
+
+    <item android:id="@+id/infoMenuOption"
+        android:title="درباره ما"
+        android:icon="@drawable/ic_menu_info"/>
+
+</menu>

@@ -1,0 +1,251 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:fancy="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    style="@style/AppTheme.PopupTheme"
+    android:layout_width="250sp"
+    android:layout_height="275sp"
+    android:layout_gravity="center"
+    android:background="@drawable/popup_background">
+
+    <android.support.constraint.ConstraintLayout
+        android:id="@+id/popupLoadingView"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:visibility="invisible"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <com.wang.avi.AVLoadingIndicatorView
+            android:id="@+id/popupLoadingIndicator"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="126dp"
+            android:layout_marginEnd="101dp"
+            android:layout_marginStart="101dp"
+            android:layout_marginTop="126dp"
+            app:indicatorName="BallClipRotatePulseIndicator"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+    </android.support.constraint.ConstraintLayout>
+
+    <android.support.constraint.ConstraintLayout
+        android:id="@+id/popupMenuView"
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <mehdi.sakout.fancybuttons.FancyButton
+            android:id="@+id/foodSelectionButton"
+            android:layout_width="0dp"
+            android:layout_height="35dp"
+            android:layout_marginEnd="70dp"
+            android:layout_marginStart="70dp"
+            android:layout_marginTop="40dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            fancy:fb_borderColor="#ff8109"
+            fancy:fb_borderWidth="2dp"
+            fancy:fb_defaultColor="@android:color/transparent"
+            fancy:fb_radius="30dp"
+            fancy:fb_text="">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <android.support.v7.widget.AppCompatTextView
+                    android:id="@+id/foodButtonTextView"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerInParent="true"
+                    android:fontFamily="@font/isbold"
+                    android:lines="1"
+                    android:text="انتخاب غذا"
+                    android:textAlignment="center"
+                    android:textColor="@android:color/white"
+                    android:textSize="14sp"
+                    app:autoSizeMaxTextSize="14sp"
+                    app:autoSizeMinTextSize="8sp"
+                    app:autoSizeStepGranularity="1sp" />
+            </RelativeLayout>
+
+        </mehdi.sakout.fancybuttons.FancyButton>
+
+        <android.support.v7.widget.AppCompatTextView
+            android:id="@+id/selectedFoodTextView"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="40dp"
+            android:layout_marginStart="40dp"
+            android:layout_marginTop="8dp"
+            android:fontFamily="@font/isbold"
+            android:maxLines="1"
+            android:text="باقالی پلو با ماهیچه"
+            android:textAlignment="center"
+            android:textColor="@android:color/white"
+            android:textSize="12sp"
+            app:autoSizeMaxTextSize="12sp"
+            app:autoSizeMinTextSize="8sp"
+            app:autoSizeStepGranularity="1sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/foodSelectionButton"
+            tools:ignore="HardcodedText" />
+
+        <android.support.v7.widget.AppCompatTextView
+            android:id="@+id/foodReserveErrorTextView"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="8dp"
+            android:layout_marginEnd="40dp"
+            android:layout_marginStart="40dp"
+            android:fontFamily="@font/isbold"
+            android:maxLines="1"
+            android:text="ابتدا غذا را انتخاب کنید"
+            android:textAlignment="center"
+            android:textColor="@android:color/holo_red_dark"
+            android:textSize="10sp"
+            android:visibility="invisible"
+            app:autoSizeMaxTextSize="10sp"
+            app:autoSizeMinTextSize="6sp"
+            app:autoSizeStepGranularity="1sp"
+            app:layout_constraintBottom_toTopOf="@+id/reserveFoodButton"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            tools:ignore="HardcodedText" />
+
+        <mehdi.sakout.fancybuttons.FancyButton
+            android:id="@+id/selfSelectionButton"
+            android:layout_width="0dp"
+            android:layout_height="35dp"
+            android:layout_marginEnd="70dp"
+            android:layout_marginStart="70dp"
+            android:layout_marginTop="40dp"
+            android:visibility="invisible"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/selectedFoodTextView"
+            fancy:fb_borderColor="#ff8109"
+            fancy:fb_borderWidth="2dp"
+            fancy:fb_defaultColor="@android:color/transparent"
+            fancy:fb_radius="30dp"
+            fancy:fb_text="">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <android.support.v7.widget.AppCompatTextView
+                    android:id="@+id/selfButtonTextView"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerInParent="true"
+                    android:fontFamily="@font/isbold"
+                    android:lines="1"
+                    android:text="انتخاب سلف"
+                    android:textAlignment="center"
+                    android:textColor="@android:color/white"
+                    android:textSize="14sp"
+                    app:autoSizeMaxTextSize="14sp"
+                    app:autoSizeMinTextSize="8sp"
+                    app:autoSizeStepGranularity="1sp" />
+            </RelativeLayout>
+
+        </mehdi.sakout.fancybuttons.FancyButton>
+
+        <android.support.v7.widget.AppCompatTextView
+            android:id="@+id/selectedSelfTextView"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="70dp"
+            android:layout_marginStart="70dp"
+            android:layout_marginTop="8dp"
+            android:fontFamily="@font/isbold"
+            android:lines="1"
+            android:text="سلف برادران"
+            android:textAlignment="center"
+            android:textColor="@android:color/white"
+            android:textSize="12sp"
+            app:autoSizeMaxTextSize="12sp"
+            app:autoSizeMinTextSize="8sp"
+            app:autoSizeStepGranularity="1sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/selectedSelfMain"
+            tools:ignore="HardcodedText" />
+
+        <android.support.v7.widget.AppCompatTextView
+            android:id="@+id/selectedSelfMain"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="8dp"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="40dp"
+            android:fontFamily="@font/isbold"
+            android:lines="1"
+            android:maxLines="1"
+            android:text="سلف"
+            android:textAlignment="center"
+            android:textColor="@android:color/white"
+            android:textSize="20sp"
+            app:autoSizeMaxTextSize="20sp"
+            app:autoSizeMinTextSize="16sp"
+            app:autoSizeStepGranularity="1sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/selectedFoodTextView"
+            tools:ignore="HardcodedText" />
+
+        <mehdi.sakout.fancybuttons.FancyButton
+            android:id="@+id/reserveFoodButton"
+            android:layout_width="0dp"
+            android:layout_height="30dp"
+            android:layout_marginBottom="20dp"
+            android:layout_marginEnd="70dp"
+            android:layout_marginStart="70dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            fancy:fb_borderColor="#ff8109"
+            fancy:fb_defaultColor="@android:color/holo_green_dark"
+            fancy:fb_radius="30dp"
+            fancy:fb_text="">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <android.support.v7.widget.AppCompatTextView
+                    android:id="@+id/reserveFoodButtonTextView"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerInParent="true"
+                    android:fontFamily="@font/isbold"
+                    android:lines="1"
+                    android:text="تایید"
+                    android:textAlignment="center"
+                    android:textColor="@android:color/white"
+                    android:textSize="14sp"
+                    app:autoSizeMaxTextSize="14sp"
+                    app:autoSizeMinTextSize="8sp"
+                    app:autoSizeStepGranularity="1sp" />
+            </RelativeLayout>
+
+        </mehdi.sakout.fancybuttons.FancyButton>
+
+
+    </android.support.constraint.ConstraintLayout>
+</android.support.constraint.ConstraintLayout>

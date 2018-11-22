@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="200dp"
+    android:layoutDirection="ltr">
+
+    <ImageView
+        android:id="@+id/imageView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:scaleType="centerCrop"
+        android:src="@mipmap/header_background" />
+
+    <android.support.v7.widget.AppCompatTextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/navigationHeaderNameText"
+        android:layout_marginBottom="8dp"
+        android:layout_marginEnd="15dp"
+        android:lines="1"
+        app:autoSizeMaxTextSize="20sp"
+        app:autoSizeMinTextSize="16sp"
+        app:autoSizeStepGranularity="1sp"
+        android:fontFamily="@font/isbold"
+        android:text="کاوه شاهدی"
+        android:textAlignment="textEnd"
+        android:textColor="@android:color/white"
+        android:textSize="20sp"
+        app:layout_constraintBottom_toTopOf="@+id/navigationHeaderCardText"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+    <android.support.v7.widget.AppCompatTextView
+        android:id="@+id/navigationHeaderCardText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="8dp"
+        android:layout_marginEnd="15dp"
+        android:fontFamily="@font/isbold"
+        android:text="شماره کارت : 58733"
+        android:textAlignment="textEnd"
+        android:textColor="@android:color/white"
+        android:textSize="12sp"
+        android:lines="1"
+        app:autoSizeMaxTextSize="12sp"
+        app:autoSizeMinTextSize="8sp"
+        app:autoSizeStepGranularity="1sp"
+        app:layout_constraintBottom_toTopOf="@+id/navigationHeaderWalletText"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+    <android.support.v7.widget.AppCompatTextView
+        android:id="@+id/navigationHeaderWalletText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="15dp"
+        android:layout_marginEnd="15dp"
+        android:fontFamily="@font/isbold"
+        android:text="اعتبار : 2,200 ریال"
+        android:textAlignment="textEnd"
+        android:textColor="@android:color/white"
+        android:textSize="12sp"
+        android:lines="1"
+        app:autoSizeMaxTextSize="12sp"
+        app:autoSizeMinTextSize="8sp"
+        app:autoSizeStepGranularity="1sp"
+        app:layout_constraintBottom_toBottomOf="@+id/imageView"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+</android.support.constraint.ConstraintLayout>

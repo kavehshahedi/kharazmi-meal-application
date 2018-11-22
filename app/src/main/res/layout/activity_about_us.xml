@@ -1,0 +1,224 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:fancy="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".AboutUsActivity"
+    android:background="#252525">
+
+    <mehdi.sakout.fancybuttons.FancyButton
+        android:id="@+id/aboutUsDeveloperField"
+        android:layout_width="0dp"
+        android:layout_height="40dp"
+        android:layout_marginEnd="65dp"
+        android:layout_marginStart="65dp"
+        android:layout_marginTop="15dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/aboutUsCallField"
+        fancy:fb_borderColor="#ff8109"
+        fancy:fb_borderWidth="2dp"
+        fancy:fb_defaultColor="@android:color/transparent"
+        fancy:fb_radius="30dp"
+        fancy:fb_text="">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <android.support.v7.widget.AppCompatTextView
+                android:id="@+id/aboutUsDeveloperFieldTextView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:fontFamily="@font/isbold"
+                android:lines="1"
+                android:text="توسعه دهنده : کاوه شاهدی"
+                android:textAlignment="center"
+                android:textColor="@android:color/white"
+                android:textSize="14sp"
+                fancy:autoSizeMaxTextSize="14sp"
+                fancy:autoSizeMinTextSize="8sp"
+                fancy:autoSizeStepGranularity="1sp" />
+        </RelativeLayout>
+
+    </mehdi.sakout.fancybuttons.FancyButton>
+
+    <mehdi.sakout.fancybuttons.FancyButton
+        android:id="@+id/aboutUsCallField"
+        android:layout_width="0dp"
+        android:layout_height="40dp"
+        android:layout_marginEnd="65dp"
+        android:layout_marginStart="65dp"
+        android:layout_marginTop="15dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/aboutUsEmailField"
+        fancy:fb_borderColor="#ff8109"
+        fancy:fb_borderWidth="2dp"
+        fancy:fb_defaultColor="@android:color/transparent"
+        fancy:fb_radius="30dp"
+        fancy:fb_text="">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <android.support.v7.widget.AppCompatTextView
+                android:id="@+id/aboutUsCallFieldTextView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:fontFamily="@font/isbold"
+                android:lines="1"
+                android:text="026 - 12345678"
+                android:textAlignment="center"
+                android:textColor="@android:color/white"
+                android:textSize="14sp"
+                fancy:autoSizeMaxTextSize="14sp"
+                fancy:autoSizeMinTextSize="8sp"
+                fancy:autoSizeStepGranularity="1sp" />
+        </RelativeLayout>
+
+    </mehdi.sakout.fancybuttons.FancyButton>
+
+    <ImageView
+        android:layout_width="120dp"
+        android:layout_height="166dp"
+        android:id="@+id/aboutUsUniversityLogo"
+        android:layout_marginEnd="8dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="35dp"
+        android:src="@mipmap/kharazmi_logo"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <android.support.v7.widget.AppCompatTextView
+        android:id="@+id/aboutUsUniversityNameTextView"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/uni_logoID"
+        android:layout_centerHorizontal="true"
+        android:layout_marginEnd="8dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="20dp"
+        android:fontFamily="@font/isbold"
+        android:text="دانشگاه خوارزمی"
+        android:textAlignment="center"
+        android:textColor="@android:color/white"
+        android:textSize="24sp"
+        app:autoSizeMaxTextSize="24sp"
+        app:autoSizeMinTextSize="20sp"
+        app:autoSizeStepGranularity="1sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/aboutUsUniversityLogo"
+        android:maxLines="1" />
+
+    <android.support.v7.widget.AppCompatTextView
+        android:id="@+id/aboutUsUniversitySelfTextView"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_marginEnd="8dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="12dp"
+        android:fontFamily="@font/isbold"
+        android:text="سیستم اتوماسیون تغذیه"
+        android:textAlignment="center"
+        android:textColor="@android:color/white"
+        android:textSize="18sp"
+        app:autoSizeMaxTextSize="18sp"
+        app:autoSizeMinTextSize="14sp"
+        app:autoSizeStepGranularity="1sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/aboutUsUniversityNameTextView"
+        android:maxLines="1" />
+
+    <android.support.v7.widget.AppCompatTextView
+        android:id="@+id/aboutUsVersionTextView"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="20dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginStart="8dp"
+        android:fontFamily="@font/isbold"
+        android:text="نسخه : 1.0.0"
+        android:textAlignment="center"
+        android:textColor="@android:color/white"
+        android:textSize="18sp"
+        app:autoSizeMaxTextSize="18sp"
+        app:autoSizeMinTextSize="14sp"
+        app:autoSizeStepGranularity="1sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        android:maxLines="1" />
+
+    <android.support.v7.widget.AppCompatTextView
+        android:id="@+id/aboutUsCopyRightTextView"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="52dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginStart="8dp"
+        android:fontFamily="@font/isbold"
+        android:text="کلیه حقوق این برنامه متعلق به دانشگاه خوارزمی می باشد"
+        android:textAlignment="center"
+        android:textColor="#a1a1a1"
+        android:textSize="12sp"
+        app:autoSizeMaxTextSize="12sp"
+        app:autoSizeMinTextSize="8sp"
+        app:autoSizeStepGranularity="1sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        android:maxLines="1" />
+
+    <mehdi.sakout.fancybuttons.FancyButton
+        android:id="@+id/aboutUsEmailField"
+        android:layout_width="0dp"
+        android:layout_height="40dp"
+        android:layout_marginEnd="65dp"
+        android:layout_marginStart="65dp"
+        android:layout_marginTop="30dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/aboutUsUniversitySelfTextView"
+        fancy:fb_borderColor="#ff8109"
+        fancy:fb_borderWidth="2dp"
+        fancy:fb_defaultColor="@android:color/transparent"
+        fancy:fb_radius="30dp"
+        fancy:fb_text="">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <android.support.v7.widget.AppCompatTextView
+                android:id="@+id/aboutUsEmailFieldTextView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:fontFamily="@font/isbold"
+                android:lines="1"
+                android:text="self@khu.ac.ir"
+                android:textAlignment="center"
+                android:textColor="@android:color/white"
+                android:textSize="14sp"
+                app:autoSizeMaxTextSize="14sp"
+                app:autoSizeMinTextSize="8sp"
+                app:autoSizeStepGranularity="1sp" />
+        </RelativeLayout>
+
+    </mehdi.sakout.fancybuttons.FancyButton>
+
+
+</android.support.constraint.ConstraintLayout>

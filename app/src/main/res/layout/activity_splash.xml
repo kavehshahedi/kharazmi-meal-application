@@ -1,0 +1,298 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".SplashActivity"
+    android:background="#252525"
+    android:theme="@style/AppTheme">
+
+    <android.support.constraint.ConstraintLayout
+        android:id="@+id/splashLoadingLayout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:visibility="invisible">
+
+        <WebView
+            android:id="@+id/wvID"
+            android:layout_width="1sp"
+            android:layout_height="1sp"
+            android:visibility="invisible">
+
+        </WebView>
+
+        <ImageView
+            android:id="@+id/uni_logoID"
+            android:layout_width="120sp"
+            android:layout_height="166sp"
+            android:layout_alignParentTop="true"
+            android:layout_centerHorizontal="true"
+            android:layout_marginEnd="8dp"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="80dp"
+            android:src="@mipmap/kharazmi_logo"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/uni_nameID"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/uni_logoID"
+            android:layout_centerHorizontal="true"
+            android:layout_marginEnd="8dp"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="20dp"
+            android:fontFamily="@font/isbold"
+            android:text="دانشگاه خوارزمی"
+            android:textColor="@android:color/white"
+            android:textSize="28sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/uni_logoID" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/uni_nameID"
+            android:layout_centerHorizontal="true"
+            android:layout_marginEnd="8dp"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="12dp"
+            android:fontFamily="@font/isbold"
+            android:text="سیستم اتوماسیون تغذیه"
+            android:textColor="@android:color/white"
+            android:textSize="18sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/uni_nameID" />
+
+        <TextView
+            android:id="@+id/textView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_above="@id/loadingIndicatorID"
+            android:layout_centerHorizontal="true"
+            android:layout_marginBottom="10dp"
+            android:layout_marginEnd="8dp"
+            android:layout_marginStart="8dp"
+            android:fontFamily="@font/isbold"
+            android:text="در حال بارگذاری..."
+            android:textColor="@android:color/white"
+            android:textSize="18sp"
+            app:layout_constraintBottom_toTopOf="@+id/loadingIndicatorID"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.502"
+            app:layout_constraintStart_toStartOf="parent" />
+
+        <com.wang.avi.AVLoadingIndicatorView
+            android:id="@+id/loadingIndicatorID"
+            android:layout_width="40sp"
+            android:layout_height="40sp"
+            android:layout_alignParentBottom="true"
+            android:layout_centerHorizontal="true"
+            android:layout_marginBottom="35dp"
+            android:layout_marginEnd="8dp"
+            android:layout_marginStart="8dp"
+            app:indicatorName="BallClipRotatePulseIndicator"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent" />
+
+    </android.support.constraint.ConstraintLayout>
+
+    <android.support.constraint.ConstraintLayout
+        android:id="@+id/splashLoginLayout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:visibility="visible">
+        <ImageView
+            android:id="@+id/captchaImage"
+            android:layout_width="0dp"
+            android:layout_height="50sp"
+            android:layout_alignParentTop="true"
+            android:layout_centerHorizontal="true"
+            android:layout_marginEnd="90dp"
+            android:layout_marginStart="90dp"
+            android:layout_marginTop="30dp"
+            android:background="@android:color/white"
+            android:scaleType="fitXY"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/captchaFieldID" />
+
+        <br.com.simplepass.loading_button_lib.customViews.CircularProgressButton
+            android:id="@+id/loginButtonID"
+            android:layout_width="0dp"
+            android:layout_height="45sp"
+            android:layout_alignParentBottom="true"
+            android:layout_centerHorizontal="true"
+            android:layout_marginBottom="35dp"
+            android:layout_marginEnd="100dp"
+            android:layout_marginStart="100dp"
+            android:background="@drawable/shape_default"
+            android:backgroundTint="#FF8F00"
+            android:fontFamily="@font/isbold"
+            android:text="ورود"
+            android:textColor="@android:color/white"
+            android:textSize="20sp"
+            app:finalCornerAngle="50sp"
+            app:initialCornerAngle="50sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:spinning_bar_color="#FFFFFFFF"
+            app:spinning_bar_padding="8sp"
+            app:spinning_bar_width="2sp" />
+
+        <android.support.v7.widget.AppCompatTextView
+            android:id="@+id/usernameTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="11dp"
+            android:layout_marginEnd="72dp"
+            android:layout_marginTop="40dp"
+            android:fontFamily="@font/isbold"
+            android:text="نام کاربری"
+            android:textColor="@android:color/white"
+            android:textSize="16sp"
+            app:layout_constraintBottom_toTopOf="@+id/usernameFieldID"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_chainStyle="packed" />
+
+        <EditText
+            android:id="@+id/usernameFieldID"
+            android:layout_width="0dp"
+            android:layout_height="50dp"
+            android:layout_marginEnd="75dp"
+            android:layout_marginStart="75dp"
+            android:layout_marginTop="11dp"
+            android:background="@drawable/round_edittext"
+            android:ems="10"
+            android:fontFamily="@font/isbold"
+            android:hint="نام کاربری خود را وارد کنید"
+            android:inputType="number"
+            android:paddingEnd="20sp"
+            android:paddingStart="20sp"
+            android:shadowColor="@android:color/transparent"
+            android:singleLine="true"
+            android:textAlignment="center"
+            android:textColor="#242424"
+            android:textColorHint="#515151"
+            android:textSize="14sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/usernameTextView"
+            tools:ignore="RtlSymmetry" />
+
+        <android.support.v7.widget.AppCompatTextView
+            android:id="@+id/passwordTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="11dp"
+            android:layout_marginEnd="72dp"
+            android:layout_marginTop="30dp"
+            android:fontFamily="@font/isbold"
+            android:text="رمز عبور"
+            android:textColor="@android:color/white"
+            android:textSize="16sp"
+            app:layout_constraintBottom_toTopOf="@+id/passwordFieldID"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/usernameFieldID" />
+
+        <EditText
+            android:id="@+id/passwordFieldID"
+            android:layout_width="0dp"
+            android:layout_height="50dp"
+            android:layout_marginEnd="75dp"
+            android:layout_marginStart="75dp"
+            android:layout_marginTop="12dp"
+            android:background="@drawable/round_edittext"
+            android:ems="10"
+            android:fontFamily="@font/isbold"
+            android:hint="رمز عبور خود را وارد کنید"
+            android:inputType="number|numberPassword"
+            android:paddingEnd="20sp"
+            android:paddingStart="20sp"
+            android:shadowColor="@android:color/transparent"
+            android:singleLine="true"
+            android:textAlignment="center"
+            android:textColor="#242424"
+            android:textColorHint="#515151"
+            android:textSize="14sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="1.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/passwordTextView"
+            tools:ignore="RtlSymmetry" />
+
+        <android.support.v7.widget.AppCompatTextView
+            android:id="@+id/captchaTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="11dp"
+            android:layout_marginEnd="72dp"
+            android:layout_marginTop="30dp"
+            android:fontFamily="@font/isbold"
+            android:text="کد امنیتی"
+            android:textColor="@android:color/white"
+            android:textSize="16sp"
+            app:layout_constraintBottom_toTopOf="@+id/captchaFieldID"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/passwordFieldID" />
+
+        <EditText
+            android:id="@+id/captchaFieldID"
+            android:layout_width="0dp"
+            android:layout_height="50dp"
+            android:layout_marginEnd="75dp"
+            android:layout_marginStart="75dp"
+            android:layout_marginTop="11dp"
+            android:background="@drawable/round_edittext"
+            android:ems="10"
+            android:fontFamily="@font/isbold"
+            android:hint="کد امنیتی زیر را وارد کنید"
+            android:inputType="number"
+            android:paddingEnd="20sp"
+            android:paddingStart="20sp"
+            android:shadowColor="@android:color/transparent"
+            android:singleLine="true"
+            android:textAlignment="center"
+            android:textColor="#242424"
+            android:textColorHint="#515151"
+            android:textSize="14sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/captchaTextView"
+            tools:ignore="RtlSymmetry" />
+
+        <android.support.v7.widget.AppCompatTextView
+            android:id="@+id/loginErrorTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="15dp"
+            android:layout_marginEnd="8dp"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="8dp"
+            android:fontFamily="@font/isbold"
+            android:maxLines="1"
+            android:text=""
+            android:textColor="@android:color/holo_red_dark"
+            android:textSize="14sp"
+            app:autoSizeMaxTextSize="14sp"
+            app:autoSizeMinTextSize="10sp"
+            app:autoSizeStepGranularity="1sp"
+            app:layout_constraintBottom_toTopOf="@+id/loginButtonID"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/captchaImage"
+            app:layout_constraintVertical_bias="1.0" />
+    </android.support.constraint.ConstraintLayout>
+
+</android.support.constraint.ConstraintLayout>
