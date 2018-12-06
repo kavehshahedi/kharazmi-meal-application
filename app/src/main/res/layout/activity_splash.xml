@@ -109,21 +109,6 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:visibility="visible">
-        <ImageView
-            android:id="@+id/captchaImage"
-            android:layout_width="0dp"
-            android:layout_height="50sp"
-            android:layout_alignParentTop="true"
-            android:layout_centerHorizontal="true"
-            android:layout_marginEnd="90dp"
-            android:layout_marginStart="90dp"
-            android:layout_marginTop="30dp"
-            android:background="@android:color/white"
-            android:scaleType="fitXY"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.0"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/captchaFieldID" />
 
         <br.com.simplepass.loading_button_lib.customViews.CircularProgressButton
             android:id="@+id/loginButtonID"
@@ -257,7 +242,7 @@
             android:ems="10"
             android:fontFamily="@font/isbold"
             android:hint="کد امنیتی زیر را وارد کنید"
-            android:inputType="number"
+            android:inputType="text"
             android:paddingEnd="20sp"
             android:paddingStart="20sp"
             android:shadowColor="@android:color/transparent"
@@ -279,7 +264,6 @@
             android:layout_marginBottom="15dp"
             android:layout_marginEnd="8dp"
             android:layout_marginStart="8dp"
-            android:layout_marginTop="8dp"
             android:fontFamily="@font/isbold"
             android:maxLines="1"
             android:text=""
@@ -290,9 +274,18 @@
             app:autoSizeStepGranularity="1sp"
             app:layout_constraintBottom_toTopOf="@+id/loginButtonID"
             app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent" />
+
+        <WebView
+            android:id="@+id/tempWebView"
+            android:layout_width="150dp"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="8dp"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="30dp"
+            app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/captchaImage"
-            app:layout_constraintVertical_bias="1.0" />
+            app:layout_constraintTop_toBottomOf="@+id/captchaFieldID" />
     </android.support.constraint.ConstraintLayout>
 
 </android.support.constraint.ConstraintLayout>

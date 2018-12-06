@@ -2,6 +2,7 @@ package khumeal.kavehshahedi.ir.kharazmimeal;
 
 import android.animation.Animator;
 import android.annotation.SuppressLint;
+import android.app.Activity;
 import android.app.AlarmManager;
 import android.app.PendingIntent;
 import android.content.ComponentName;
@@ -9,8 +10,13 @@ import android.content.Context;
 import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.content.res.Configuration;
+import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
+import android.graphics.Canvas;
 import android.graphics.Color;
+import android.graphics.Paint;
+import android.graphics.Picture;
+import android.graphics.Rect;
 import android.net.http.SslError;
 import android.os.Handler;
 import android.support.constraint.ConstraintLayout;
@@ -19,10 +25,13 @@ import android.support.v4.content.res.ResourcesCompat;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.AppCompatTextView;
+import android.util.Log;
+import android.view.MotionEvent;
 import android.view.View;
 import android.view.WindowManager;
 import android.webkit.JavascriptInterface;
 import android.webkit.SslErrorHandler;
+import android.webkit.WebChromeClient;
 import android.webkit.WebResourceError;
 import android.webkit.WebResourceRequest;
 import android.webkit.WebResourceResponse;
@@ -67,7 +76,7 @@ public class SplashActivity extends AppCompatActivity {
 
     public static String currentPage = null;
 
-    public ImageView img;
+    //public ImageView img;
 
     CircularProgressButton cpb;
 
@@ -82,6 +91,8 @@ public class SplashActivity extends AppCompatActivity {
 
     final Timer t = new Timer();
 
+    WebView tempWebView;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -92,6 +103,8 @@ public class SplashActivity extends AppCompatActivity {
         getResources().updateConfiguration(configuration, getResources().getDisplayMetrics());
 
         getWindow().setSoftInputMode(WindowManager.LayoutParams.SOFT_INPUT_ADJUST_PAN);
+
+        tempWebView = findViewById(R.id.tempWebView);
 
         splashLoadingLayout = findViewById(R.id.splashLoadingLayout);
         splashLoginLayout = findViewById(R.id.splashLoginLayout);
@@ -110,7 +123,7 @@ public class SplashActivity extends AppCompatActivity {
         loading = findViewById(R.id.loadingIndicatorID);
         loadingTextView = findViewById(R.id.textView);
 
-        img = findViewById(R.id.captchaImage);
+        //img = findViewById(R.id.captchaImage);
 
         cpb = findViewById(R.id.loginButtonID);
 
@@ -121,7 +134,6 @@ public class SplashActivity extends AppCompatActivity {
         webView = findViewById(R.id.wvID);
         webView.setVisibility(View.INVISIBLE);
         webView.setClickable(false);
-
 
         t.schedule(new TimerTask() {
             @Override
@@ -252,9 +264,28 @@ public class SplashActivity extends AppCompatActivity {
         });
     }
 
+    @SuppressLint({"SetJavaScriptEnabled", "ClickableViewAccessibility"})
     public void setCaptcha(String captcha)
     {
-        Picasso.get().load(captcha).into(img);
+        tempWebView.getSettings().setJavaScriptEnabled(true);
+        tempWebView.setVerticalScrollBarEnabled(false);
+        tempWebView.setHorizontalScrollBarEnabled(false);
+        tempWebView.setOnTouchListener(new View.OnTouchListener() {
+        @Override
+        public boolean onTouch(View v, MotionEvent event) {
+            return (event.getAction() == MotionEvent.ACTION_MOVE);
+        }
+    });
+        tempWebView.addJavascriptInterface(this,"tempHandler");
+        tempWebView.setWebViewClient(new WebViewClient(){
+            @Override
+            public void onPageFinished(WebView view, String url) {
+                super.onPageFinished(view, url);
+                tempWebView.loadUrl("javascript:document.getElementById('captchaImg');");
+            }
+        });
+        tempWebView.loadUrl(captcha);
+        //Picasso.get().load(captcha).into(img);
     }
 
     @SuppressLint({"JavascriptInterface", "AddJavascriptInterface", "SetJavaScriptEnabled"})
@@ -295,14 +326,19 @@ public class SplashActivity extends AppCompatActivity {
         Document document = Jsoup.parse(html);
         String message = document.getElementById("lblmessage").text();
 
+        String image = document.getElementById("captchaImg").attr("src");
+
+        Log.e("cap",image);
+
+
         switch (message)
         {
             case("نام کاربری و کلمه عبور خود را وارد نمائید") :
             {
                 bodyText = html;
                 bodyText = bodyText.replace("\"","'");
-                captcha = bodyText.substring(bodyText.indexOf("'CaptchaImage.aspx?guid=") + 1);
-                captcha = "http://meal.khu.ac.ir/" + captcha.substring(0, captcha.indexOf("'"));
+                //captcha = bodyText.substring(bodyText.indexOf("'CaptchaImage.aspx?guid=") + 1);
+                captcha = "http://meal.khu.ac.ir/" + image;
 
                 runOnUiThread(new Runnable() {
                     @Override
@@ -315,13 +351,14 @@ public class SplashActivity extends AppCompatActivity {
                 break;
             }
 
+
             case("کد امنیتی اشتباه است") :
             {
 
                 bodyText = html;
                 bodyText = bodyText.replace("\"","'");
-                captcha = bodyText.substring(bodyText.indexOf("'CaptchaImage.aspx?guid=") + 1);
-                captcha = "http://meal.khu.ac.ir/" + captcha.substring(0, captcha.indexOf("'"));
+                //captcha = bodyText.substring(bodyText.indexOf("'CaptchaImage.aspx?guid=") + 1);
+                captcha = "http://meal.khu.ac.ir/" + image;
 
                 runOnUiThread(new Runnable() {
                     @Override
@@ -343,11 +380,10 @@ public class SplashActivity extends AppCompatActivity {
 
             case("شماره کارت یا کلمه عبور اشتباه است") :
             {
-
                 bodyText = html;
                 bodyText = bodyText.replace("\"","'");
-                captcha = bodyText.substring(bodyText.indexOf("'CaptchaImage.aspx?guid=") + 1);
-                captcha = "http://meal.khu.ac.ir/" + captcha.substring(0, captcha.indexOf("'"));
+                //captcha = bodyText.substring(bodyText.indexOf("'CaptchaImage.aspx?guid=") + 1);
+                captcha = "http://meal.khu.ac.ir/" + image;
 
                 runOnUiThread(new Runnable() {
                     @Override
@@ -404,7 +440,7 @@ public class SplashActivity extends AppCompatActivity {
             public void run() {
                 webView.loadUrl("javascript:var username = document.getElementById('txtusername').value='"+usernameField.getText()+"';");
                 webView.loadUrl("javascript:var password = document.getElementById('txtpassword').value='"+passwordField.getText()+"';");
-                webView.loadUrl("javascript:var captcha = document.getElementsByName('CaptchaControl1')[0].value='"+captchaField.getText()+"';");
+                webView.loadUrl("javascript:var captcha = document.getElementsByName('txtCaptchaText')[0].value='"+captchaField.getText()+"';");
                 webView.loadUrl("javascript:var buttonlogin = document.getElementsByName('btnlogin')[0].click();");
             }
         });
