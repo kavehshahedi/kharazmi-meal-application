@@ -500,6 +500,32 @@ public class ReserveActivity extends AppCompatActivity implements NavigationView
                 reserveMainLayout.setVisibility(View.VISIBLE);
             }
         });
+
+        if (msg.contains("غیر مجاز") || msg.contains("غیرمجاز"))
+        {
+            DialogInterface.OnClickListener dialogClickListener = new DialogInterface.OnClickListener() {
+                @Override
+                public void onClick(DialogInterface dialog, int which) {
+                    switch (which){
+                        case DialogInterface.BUTTON_POSITIVE:
+                            finishAffinity();
+                            break;
+
+                        case DialogInterface.BUTTON_NEGATIVE:
+                            break;
+                    }
+                }
+            };
+
+            AlertDialog builder = new AlertDialog.Builder(this).setMessage("هنگام رزرو خطایی رخ داد. مجددا وارد شوید").setPositiveButton("خروج", dialogClickListener)
+                    .setCancelable(false).show();
+
+            TextView textView = builder.findViewById(android.R.id.message);
+            Button button1 = builder.getWindow().findViewById(android.R.id.button1);
+            assert textView != null;
+            textView.setTypeface(ResourcesCompat.getFont(getApplicationContext(),R.font.isbold));
+            button1.setTypeface(ResourcesCompat.getFont(getApplicationContext(),R.font.isbold));
+        }
     }
 
     public void changeNavigationDrawerFont()

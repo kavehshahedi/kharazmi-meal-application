@@ -356,7 +356,7 @@ public class DayItemsRecyclerViewAdapter extends RecyclerView.Adapter<DayItemsRe
                             s = s.substring(s.length() - 1);
                             s = s.replaceAll("\\s+","");
                             Log.e("Reserve : ","Num" + foodNumber + "Type" + s + " Food Price" + foodPrice);
-                            ReserveActivity.web.loadUrl("javascript:SelectGh(" + foodNumber + ",1,'name'," + s + "," + foodPrice + ");");
+                            ReserveActivity.web.loadUrl("javascript:SelectGh(" + foodNumber + ",0,'name'," + s + "," + foodPrice + ");");
                             ReserveActivity.web.loadUrl("javascript:var self = document.getElementById('" + models.get(pos).getBreakfastSelf() + "').value='" + selfNumber + "';");
                             ReserveActivity.web.loadUrl("javascript:var buttonlogin = document.getElementById('btn_saveKharid').click();");
                             break;
@@ -381,7 +381,7 @@ public class DayItemsRecyclerViewAdapter extends RecyclerView.Adapter<DayItemsRe
                             //Log.e("Code : ","SelectGh(" + foodNumber + ",1,'name'," + s + "," + foodPrice + ");");
                             s = s.replaceAll("\\s+","");
                             Log.e("Reserve : ","Num" + foodNumber + "Type" + s + " Food Price" + foodPrice);
-                            ReserveActivity.web.loadUrl("javascript:SelectGh(" + foodNumber + ",1,'name'," + s + "," + foodPrice + ");");
+                            ReserveActivity.web.loadUrl("javascript:SelectGh(" + foodNumber + ",2,'name'," + s + "," + foodPrice + ");");
                             ReserveActivity.web.loadUrl("javascript:var self = document.getElementById('" + models.get(pos).getDinnerSelf() + "').value='" + selfNumber + "';");
                             ReserveActivity.web.loadUrl("javascript:var buttonlogin = document.getElementById('btn_saveKharid').click();");
                             break;
