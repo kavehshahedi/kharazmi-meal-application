@@ -132,7 +132,7 @@
             app:layout_constraintStart_toStartOf="parent"
             app:spinning_bar_color="#FFFFFFFF"
             app:spinning_bar_padding="8sp"
-            app:spinning_bar_width="2sp" />
+            app:spinning_bar_width="2sp"/>
 
         <android.support.v7.widget.AppCompatTextView
             android:id="@+id/usernameTextView"
