@@ -121,23 +121,23 @@ public class PaymentActivity extends AppCompatActivity {
             public void onPageFinished(WebView view, String url) {
                 super.onPageFinished(view, url);
                 String u = webView.getUrl();
-                if (u.equals("http://meal.khu.ac.ir/EtebarT.aspx"))
+                if (u.equals("http://meal.khu.ac.ir/Credit_CentralBank.aspx"))
                 {
                     loadingLayout.setVisibility(View.INVISIBLE);
                     fieldsLayout.setVisibility(View.VISIBLE);
                     webView.loadUrl("javascript:window.handler.setFieldsLayout" + "('<html>'+document.getElementsByTagName('html')[0].innerHTML+'</html>');");
 
-                }else  if (u.equals("http://meal.khu.ac.ir/ET_F.aspx"))
+                }else  if (u.equals("http://meal.khu.ac.ir/Credit_CentralBank_Went.aspx"))
                 {
                     loadingLayout.setVisibility(View.INVISIBLE);
                     checkLayout.setVisibility(View.VISIBLE);
                     webView.loadUrl("javascript:window.handler.setCheckLayout" + "('<html>'+document.getElementsByTagName('html')[0].innerHTML+'</html>');");
-                }else if (u.equals("http://meal.khu.ac.ir/ET_P.aspx"))
+                }else if (u.equals("http://meal.khu.ac.ir/Credit_CentralBank_Revert.aspx"))
                 {
                     loadingLayout.setVisibility(View.INVISIBLE);
                     resultLayout.setVisibility(View.VISIBLE);
                     webView.loadUrl("javascript:window.handler.setResultLayout" + "('<html>'+document.getElementsByTagName('html')[0].innerHTML+'</html>');");
-                }else if (u.contains("shaparak"))
+                }else if (u.contains("cbinasim"))
                 {
                     loadingLayout.setVisibility(View.INVISIBLE);
                     webLayout.setVisibility(View.VISIBLE);
@@ -155,7 +155,7 @@ public class PaymentActivity extends AppCompatActivity {
                 Log.e("SSL",error.toString());
             }
         });
-        webView.loadUrl("http://meal.khu.ac.ir/EtebarT.aspx");
+        webView.loadUrl("http://meal.khu.ac.ir/Credit_CentralBank.aspx");
     }
 
     @JavascriptInterface
@@ -173,7 +173,7 @@ public class PaymentActivity extends AppCompatActivity {
                             webView.post(new Runnable() {
                                 @Override
                                 public void run() {
-                                    webView.loadUrl("javascript:var username = document.getElementById('TxtSalary').value='"+moneyEditText.getText()+"';");
+                                    webView.loadUrl("javascript:var username = document.getElementById('txtAmount').value='"+moneyEditText.getText()+"';");
                                     webView.loadUrl("javascript:var button = document.getElementsByName('BtnOk')[0].click();");
                                 }
                             });
@@ -213,7 +213,7 @@ public class PaymentActivity extends AppCompatActivity {
                         webView.post(new Runnable() {
                             @Override
                             public void run() {
-                                webView.loadUrl("javascript:var buttonpay = document.getElementsByName('Button1')[0].click();");
+                                webView.loadUrl("javascript:var buttonpay = document.getElementsByName('btnSubmit')[0].click();");
                             }
                         });
                     }
